@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS LibraryDB;
+SHOW DATABASES;
+USE LibraryDB;
+
+CREATE TABLE IF NOT EXISTS LibraryMembers (
+    MemberID INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    Username VARCHAR(50) UNIQUE NOT NULL,
+    Password VARCHAR(100) NOT NULL
+);
+
+USE LibraryDB;
+
+CREATE TABLE IF NOT EXISTS Books (
+    BookID INT AUTO_INCREMENT PRIMARY KEY,
+    Title VARCHAR(255) NOT NULL,
+    Author VARCHAR(255) NOT NULL,
+    Genre VARCHAR(100),
+    TotalCopies INT DEFAULT 0,
+    CopiesAvailable INT DEFAULT 0,
+    TimesBorrowed INT DEFAULT 0
+);
+SHOW TABLES;
+
+USE LibraryDB;
+
+SELECT * FROM LibraryMembers;
+SELECT * FROM books;
+SELECT * FROM LibraryMembers;
